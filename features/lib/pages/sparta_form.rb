@@ -38,6 +38,29 @@ class SpartaForm
   EMAIL_ADRESS_ERROR_MESSAGE_LOCATION = 'body > div > form > div:nth-child(15) > div > div'
   PHONE_NUMBER_ERROR_MESSAGE_LOCATION = 'body > div > form > div:nth-child(17) > div > div'
 
+  def initialize
+  # List of Error messages which can occur
+  @first_name_error_message = 'Please enter your first name.'
+  @last_name_error_message = 'Please enter your last name.'
+  @age_error_message = 'Please enter your age.'
+  @Date_of_birth_missing_error_message = 'missing'
+  @gender_missing_error_message = 'missing'
+  @degree_missing_error_message = 'missing'
+  @university_missing_error_message = 'missing'
+  @address_line1_error_message = 'Please enter an address.'
+  @address_line2_missing_error_message = 'missing'
+  @city_missing_error_message = 'missing'
+  @county_missing_error_message = 'missing'
+  @postcode_error_message = 'Please enter a postcode.'
+  @email_address_error_message = 'Please enter an email.'
+  @skill_missing_error_message = 'missing'
+  @phone_number_error_message = 'Please enter a phone number.'
+  @linkedin_missing_error_message = 'missing'
+  @upload_cv_missing_error_message = 'missing'
+  @stream_missing_error_message = 'missing'
+  @rating_slider_missing_error_message = 'default is 50?'
+  end
+
   def find_first_name_error_message
     find(:css, FIRST_NAME_ERROR_MESSAGE_LOCATION).text
   end
@@ -153,24 +176,3 @@ class SpartaForm
     puts "pending"
   end
 end
-
-  # List of Error messages which can occur
-  # @first_name_error_message = 'Please enter your first name.'
-  # @last_name_error_message = 'Please enter your last name.'
-  # @age_error_message = 'Please enter your age.'
-  # @Date_of_birth_missing_error_message = 'missing'
-  # @gender_missing_error_message = 'missing'
-  # @degree_missing_error_message = 'missing'
-  # @university_missing_error_message = 'missing'
-  # @address_line1_error_message = 'Please enter an address.'
-  # @address_line2_missing_error_message = 'missing'
-  # @city_missing_error_message = 'missing'
-  # @county_missing_error_message = 'missing'
-  # @postcode_error_message = 'Please enter a postcode.'
-  # @email_address_error_message = 'Please enter an email.'
-  # @skill_missing_error_message = 'missing'
-  # @phone_number_error_message = 'Please enter a phone number.'
-  # @linkedin_missing_error_message = 'missing'
-  # @upload_cv_missing_error_message = 'missing'
-  # @stream_missing_error_message = 'missing'
-  # @rating_slider_missing_error_message = 'default is 50?'
