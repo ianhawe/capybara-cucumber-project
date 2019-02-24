@@ -35,28 +35,28 @@ Given("I fill in the form") do
   @sparta_webpage.sparta_registration_form.fill_in_phone_number('07932921382')
   @sparta_webpage.sparta_registration_form.fill_in_linkedin_url('spartaIn')
   # This line is left for a choose file method to be made
-  # @sparta_webpage.sparta_registration_form..fill_in_stream
+  # This line is left for a choose stream method to be made
   @sparta_webpage.sparta_registration_form.fill_in_terms_and_conditions
-  #  @sparta_webpage.sparta_registration_form.fill_in_rating_slider
+  #  This line is left for a choose slider rating method to be made
 end
 
 Given("I forget to write in my first name") do
-   @sparta_webpage.sparta_registration_form.fill_in_first_name('')
+  @sparta_webpage.sparta_registration_form.fill_in_first_name('')
 end
 Then("I recieve an error prompt which tells me to enter my first name") do
   expect(@sparta_webpage.sparta_registration_form.find_first_name_error_message).to eq @sparta_webpage.sparta_registration_form.first_name_error_message
 end
 
 Given("I forget to write in my last name") do
-   @sparta_webpage.sparta_registration_form.fill_in_last_name('')
+  @sparta_webpage.sparta_registration_form.fill_in_last_name('')
 end
 
 Then("I recieve an error prompt which tells me to enter my last name") do
-   expect(@sparta_webpage.sparta_registration_form.find_last_name_error_message).to eq @sparta_webpage.sparta_registration_form.last_name_error_message
+  expect(@sparta_webpage.sparta_registration_form.find_last_name_error_message).to eq @sparta_webpage.sparta_registration_form.last_name_error_message
 end
 
 Given("I forget to write in how old I am") do
-   @sparta_webpage.sparta_registration_form.fill_in_age('') 
+  @sparta_webpage.sparta_registration_form.fill_in_age('') 
 end
 
 Then("I recieve an error prompt which tells me to enter my age") do

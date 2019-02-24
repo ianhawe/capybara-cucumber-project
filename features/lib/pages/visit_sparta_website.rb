@@ -1,5 +1,6 @@
 require 'capybara/dsl'
 
+# This holds all links associated with Sparta
 class VisitSpartaPage
   include Capybara::DSL
 
