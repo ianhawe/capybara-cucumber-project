@@ -9,9 +9,9 @@ class SpartaForm
   # Page Objects
   FIRSTNAME_TEXTBOX_ID = 'firstName'
   LASTNAME_TEXTBOX_ID = 'lastName'
-  AGE_CSS_SELECTOR = '.form-row .form_group .form-control'
+  AGE_XPATH = '/html/body/div/form/div[3]/div/input'
   DATE_OF_BIRTH_NAME = 'dob'
-  GENDER_RADIO_BUTTONS_ID = 'customRadioInline1'
+  GENDER_RADIO_BUTTONS_XPATH = '/html/body/div/form/div[5]'
   DEGREE_XPATH = '/html/body/div/form/div[7]/div/input'
   UNIVERSITY_DROPDOWN_ID = 'inputUni'
   ADDRESS_LINE_ONE_ID = 'inputAddress'
@@ -24,8 +24,8 @@ class SpartaForm
   PHONE_NUMBER_ID = 'exampleFormControlInput1'
   LINKEDIN_URL_XPATH = '/html/body/div/form/div[17]/div/input'
   CV_UPLOAD_NAME = 'cv'
-  STREAM_XPATH = '/html/body/div/form/div[20]/div[2]/label'
-  TERMS_AND_CONDITIONS_ID = 'terms'
+  STREAM_XPATH = '/html/body/div/form/div[20]/div[1]'
+  TERMS_AND_CONDITIONS_ID = '//*[@id="terms"]'
   RATING_SLIDER_ID = 'experienceSlider'
   SIGN_IN_BUTTON = 'Sign in'
 
@@ -80,7 +80,7 @@ class SpartaForm
   end
 
   def fill_in_age(age)
-    fill_in(:css, AGE_CSS_SELECTOR).set(age)
+    find(:xpath, AGE_XPATH).set(age)
   end
 
   def fill_in_date_of_birth(date_of_birth)
@@ -88,7 +88,7 @@ class SpartaForm
   end
 
   def fill_in_gender(number)
-    find(:xpath, GENDER_XPATH).click
+    find(:xpath, GENDER_RADIO_BUTTONS_XPATH).click
   end
 
   def fill_in_degree(degree)
@@ -135,12 +135,18 @@ class SpartaForm
     find(:xpath, LINKEDIN_URL_XPATH).set(linkedin)
   end
 
+  def fill_in_file
+    puts "pending"
+  end
+
   def fill_in_stream
+    
     find(:xpath, STREAM_XPATH).click
   end
 
   def fill_in_terms_and_conditions
-    find(TERMS_AND_CONDITIONS_ID).click
+    find(:xpath, TERMS_AND_CONDITIONS_ID).click
+    
   end
 
   def fill_in_rating_slider
@@ -148,7 +154,7 @@ class SpartaForm
   end
 end
 
-  # Error messages
+  # List of Error messages which can occur
   # @first_name_error_message = 'Please enter your first name.'
   # @last_name_error_message = 'Please enter your last name.'
   # @age_error_message = 'Please enter your age.'

@@ -1,4 +1,4 @@
-Feature: Bupa Signin
+Feature: Sparta Signin
   @check_login_details
   Scenario Outline: Inputting nothing will produce many errors
     Given I have access to the sparta form
