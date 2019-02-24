@@ -38,7 +38,6 @@ Given("I fill in the form") do
   # @sparta_webpage.sparta_registration_form..fill_in_stream
   @sparta_webpage.sparta_registration_form.fill_in_terms_and_conditions
   #  @sparta_webpage.sparta_registration_form.fill_in_rating_slider
-  sleep 10
 end
 
 Given("I forget to write in my first name") do
@@ -46,4 +45,12 @@ Given("I forget to write in my first name") do
 end
 Then("I recieve an error prompt which tells me to enter my first name") do
   expect(@sparta_webpage.sparta_registration_form.find_first_name_error_message).to eq 'Please enter your first name.' # Write code here that turns the phrase above into concrete actions
+end
+
+Given("I forget to write in my last name") do
+   @sparta_webpage.sparta_registration_form.fill_in_last_name('') # Write code here that turns the phrase above into concrete actions
+end
+
+Then("I recieve an error prompt which tells me to enter my last name") do
+   expect(@sparta_webpage.sparta_registration_form.find_last_name_error_message).to eq 'Please enter your last name.' # Write code here that turns the phrase above into concrete actions
 end

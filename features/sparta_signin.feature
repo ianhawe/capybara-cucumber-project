@@ -22,3 +22,10 @@ Feature: Sparta Signin
     And I forget to write in my first name
     When I click sign-in
     Then I recieve an error prompt which tells me to enter my first name
+
+  Scenario: filling out the form minus the first name should produce an error message
+    Given I have access to the sparta form
+    And I fill in the form
+    And I forget to write in my last name
+    When I click sign-in
+    Then I recieve an error prompt which tells me to enter my last name
